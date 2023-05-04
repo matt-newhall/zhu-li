@@ -1,7 +1,7 @@
 const { Client, GuildMember, GatewayIntentBits } = require('discord.js')
 const { Player, QueryType } = require('discord-player')
 const { YouTubeExtractor } = require('@discord-player/extractor')
-const config = require('./config.json')
+require('dotenv').config()
 
 const client = new Client({
   intents: [
@@ -144,4 +144,4 @@ client.on('interactionCreate', async (interaction) => {
   }
 })
 
-client.login(config.token)
+client.login(process.env.DISCORD_BOT_KEY)
